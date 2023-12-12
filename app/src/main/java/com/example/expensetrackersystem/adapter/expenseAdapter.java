@@ -1,5 +1,6 @@
 package com.example.expensetrackersystem.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
@@ -18,9 +19,8 @@ import java.util.Calendar;
 import java.util.List;
 
 public class expenseAdapter extends RecyclerView.Adapter<expenseAdapter.viewholder> {
-    private Context context;
+    private final Context context;
     private List<expenseModel> incomeModelList = new ArrayList<>();
-
     public expenseAdapter(Context context, List<expenseModel> incomeModelList) {
         this.context = context;
         this.incomeModelList = incomeModelList;
@@ -33,11 +33,11 @@ public class expenseAdapter extends RecyclerView.Adapter<expenseAdapter.viewhold
         return new viewholder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
         expenseModel model = incomeModelList.get(position);
-        holder.tv_incomeAmount.setText("₹"+model.getAmount());
-
+        holder.tv_incomeAmount.setText("৳"+model.getAmount());
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(Long.parseLong(model.getDate()));
         String formattedDate = DateFormat.format("dd/MM/yyyy", calendar).toString();
@@ -51,9 +51,8 @@ public class expenseAdapter extends RecyclerView.Adapter<expenseAdapter.viewhold
         return incomeModelList.size();
     }
 
-    class viewholder extends RecyclerView.ViewHolder {
+    static class viewholder extends RecyclerView.ViewHolder {
         TextView tv_incomeJob, tv_incomeAmount, tv_incomeDate;
-
         public viewholder(@NonNull View itemView) {
             super(itemView);
 

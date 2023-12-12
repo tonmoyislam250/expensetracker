@@ -1,5 +1,6 @@
 package com.example.expensetrackersystem.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
@@ -21,9 +22,9 @@ import java.util.Calendar;
 import java.util.List;
 
 public class expenseAdapter2 extends RecyclerView.Adapter<expenseAdapter2.viewholder> {
-    private Context context;
-    private List<expenseModel> expenseModelList;
-    private DatabaseHandlerExpense databaseHandler;
+    private final Context context;
+    private final List<expenseModel> expenseModelList;
+    private final DatabaseHandlerExpense databaseHandler;
 
     public expenseAdapter2(Context context, List<expenseModel> expenseModelList, DatabaseHandlerExpense databaseHandler) {
         this.context = context;
@@ -38,19 +39,17 @@ public class expenseAdapter2 extends RecyclerView.Adapter<expenseAdapter2.viewho
         return new viewholder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
         expenseModel model = expenseModelList.get(position);
-        holder.tv_incomeAmount.setText("₹"+model.getAmount());
+        holder.tv_incomeAmount.setText("৳"+model.getAmount());
         holder.tv_incomeType.setText(model.getType());
         holder.tv_incomeNote.setText(model.getNote());
-
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(Long.parseLong(model.getDate()));
         String formattedDate = DateFormat.format("dd/MM/yyyy", calendar).toString();
-
         holder.tv_incomeDate.setText(formattedDate);
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,8 +118,11 @@ public class expenseAdapter2 extends RecyclerView.Adapter<expenseAdapter2.viewho
         return expenseModelList.size();
     }
 
-    class viewholder extends RecyclerView.ViewHolder {
-        private TextView tv_incomeDate, tv_incomeType, tv_incomeNote, tv_incomeAmount;
+    static class viewholder extends RecyclerView.ViewHolder {
+        private final TextView tv_incomeDate;
+        private final TextView tv_incomeType;
+        private final TextView tv_incomeNote;
+        private final TextView tv_incomeAmount;
 
         public viewholder(@NonNull View itemView) {
             super(itemView);

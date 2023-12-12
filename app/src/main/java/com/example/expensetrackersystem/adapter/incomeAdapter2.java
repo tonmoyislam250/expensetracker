@@ -1,5 +1,6 @@
 package com.example.expensetrackersystem.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
@@ -22,10 +23,10 @@ import java.util.List;
 
 public class incomeAdapter2 extends RecyclerView.Adapter<incomeAdapter2.viewholder> {
 
-    private Context context;
-    private List<incomeModel> expenseModelList;
+    private final Context context;
+    private final List<incomeModel> expenseModelList;
 
-    private DatabaseHandler databaseHandler;
+    private final DatabaseHandler databaseHandler;
 
     public incomeAdapter2(Context context, List<incomeModel> expenseModelList, DatabaseHandler databaseHandler) {
         this.context = context;
@@ -40,10 +41,11 @@ public class incomeAdapter2 extends RecyclerView.Adapter<incomeAdapter2.viewhold
         return new viewholder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
         incomeModel model = expenseModelList.get(position);
-        holder.tv_incomeAmount.setText("₹" + model.getAmount());
+        holder.tv_incomeAmount.setText("৳" + model.getAmount());
         holder.tv_incomeType.setText(model.getType());
         holder.tv_incomeNote.setText(model.getNote());
 
@@ -121,8 +123,11 @@ public class incomeAdapter2 extends RecyclerView.Adapter<incomeAdapter2.viewhold
         return expenseModelList.size();
     }
 
-    class viewholder extends RecyclerView.ViewHolder {
-        private TextView tv_incomeDate, tv_incomeType, tv_incomeNote, tv_incomeAmount;
+    static class viewholder extends RecyclerView.ViewHolder {
+        private final TextView tv_incomeDate;
+        private final TextView tv_incomeType;
+        private final TextView tv_incomeNote;
+        private final TextView tv_incomeAmount;
 
         public viewholder(@NonNull View itemView) {
             super(itemView);
