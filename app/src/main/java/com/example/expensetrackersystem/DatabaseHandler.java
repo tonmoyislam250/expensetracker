@@ -6,17 +6,16 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Environment;
 import androidx.annotation.Nullable;
 import com.example.expensetrackersystem.model.incomeModel;
 import java.util.ArrayList;
 import java.util.List;
 
-/** @noinspection ALL*/
 public class DatabaseHandler extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "incomeOfME.db";
+    public static final String DATABASE_NAME = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/expense_tracker/incomeOfME.db";
     public static final String TABLE_NAME = "income_data";
-    //public static final String COL1 = "ID";
     public static final String COL2 = "AMOUNT";
     public static final String COL3 = "TYPE";
     public static final String COL4 = "NOTE";
@@ -71,9 +70,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 incomeModelList.add(new incomeModel(data.getString(0), data.getString(1), data.getString(2), data.getString(3), data.getString(4)));
             }
         }
-
         return incomeModelList;
     }
-
-
 }
