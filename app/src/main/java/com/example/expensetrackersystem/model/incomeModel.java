@@ -3,8 +3,6 @@ package com.example.expensetrackersystem.model;
 public class incomeModel {
     String id, amount, type, note, date;
 
-    public incomeModel() {
-    }
 
     public String getDate() {
         return date;
@@ -26,9 +24,6 @@ public class incomeModel {
         this.amount = amount;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
 
     public incomeModel(String id, String amount, String type, String note, String date) {
         this.id = id;
@@ -48,10 +43,6 @@ public class incomeModel {
 
     public String getNote() {
         return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
     }
 
 }

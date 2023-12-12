@@ -55,12 +55,7 @@ public class incomeAdapter2 extends RecyclerView.Adapter<incomeAdapter2.viewhold
 
         holder.tv_incomeDate.setText(formattedDate);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showIncomeDialog(context, model);
-            }
-        });
+        holder.itemView.setOnClickListener(v -> showIncomeDialog(context, model));
     }
 
     public void showIncomeDialog(Context context, incomeModel model) {
@@ -83,37 +78,26 @@ public class incomeAdapter2 extends RecyclerView.Adapter<incomeAdapter2.viewhold
 
         alertDialog.show();
 
-        btn_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        btn_cancel.setOnClickListener(v -> alertDialog.dismiss());
+
+        btn_save.setOnClickListener(v -> {
+            String id = model.getId();
+            String amount = et_income.getText().toString();
+            String type = et_type.getText().toString();
+            String note = et_note.getText().toString();
+            long date = System.currentTimeMillis();
+
+            if (amount.isEmpty()) {
+                et_income.setError("Empty amount");
+            } else if (type.isEmpty()) {
+                et_type.setError("Empty Type");
+            } else if (note.isEmpty()) {
+                et_note.setError("Empty note");
+            } else {
+                databaseHandler.update(id, amount, type, note, String.valueOf(date));
                 alertDialog.dismiss();
             }
-        });
 
-        btn_save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String id = model.getId();
-                String amount = et_income.getText().toString();
-                String type = et_type.getText().toString();
-                String note = et_note.getText().toString();
-                long date = System.currentTimeMillis();
-
-                if (amount.isEmpty()) {
-                    et_income.setError("Empty amount");
-                    return;
-                } else if (type.isEmpty()) {
-                    et_type.setError("Empty Type");
-                    return;
-                } else if (note.isEmpty()) {
-                    et_note.setError("Empty note");
-                    return;
-                } else {
-                    databaseHandler.update(id, amount, type, note, String.valueOf(date));
-                    alertDialog.dismiss();
-                }
-
-            }
         });
 
     }

@@ -15,9 +15,9 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:layout_weight="2"
-            android:text="Amount: "
+            android:text="@string/amount"
             android:textColor="@color/textColor"
             android:textSize="20sp" />
 
@@ -28,10 +28,11 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_weight="3"
-            android:hint="amount"
+            android:hint="@string/amount2"
             android:inputType="number"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:autofillHints="" />
 
     </LinearLayout>
 
@@ -45,9 +46,9 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:layout_weight="2"
-            android:text="Type: "
+            android:text="@string/type"
             android:textColor="@color/textColor"
             android:textSize="20sp" />
 
@@ -58,9 +59,11 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_weight="3"
-            android:hint="type"
+            android:hint="@string/type1"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:autofillHints=""
+            android:inputType="text" />
 
     </LinearLayout>
 
@@ -74,9 +77,9 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:layout_weight="2"
-            android:text="Note: "
+            android:text="@string/note"
             android:textColor="@color/textColor"
             android:textSize="20sp" />
 
@@ -87,9 +90,11 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_weight="3"
-            android:hint="note"
+            android:text="@string/note1"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:autofillHints=""
+            android:inputType="text" />
 
     </LinearLayout>
 
@@ -104,11 +109,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
             android:layout_weight="1"
             android:background="@drawable/bg_rounded_input_field"
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16sp" />
@@ -118,11 +123,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:background="@drawable/bg_rounded_input_field"
-            android:text="Save"
+            android:text="@string/save"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16sp" />

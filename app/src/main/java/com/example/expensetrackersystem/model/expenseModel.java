@@ -2,7 +2,6 @@ package com.example.expensetrackersystem.model;
 
 public class expenseModel {
     String id, amount, type, note, date;
-
     public String getId() {
         return id;
     }
@@ -18,27 +17,21 @@ public class expenseModel {
     public void setAmount(String amount) {
         this.amount = amount;
     }
-
     public String getType() {
         return type;
     }
-
     public void setType(String type) {
         this.type = type;
     }
-
     public String getNote() {
         return note;
     }
-
     public void setNote(String note) {
         this.note = note;
     }
-
     public String getDate() {
         return date;
     }
-
     public void setDate(String date) {
         this.date = date;
     }

@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <FrameLayout
-        android:id="@+id/flFragment"
+        android:id="@+id/FillFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottomNavigationView"
@@ -30,6 +30,7 @@
         app:itemBackground="@color/dark_grey"
         app:itemIconTint="@drawable/tab_color"
         app:itemTextColor="@drawable/tab_color"
-        app:menu="@menu/menu" />
+        app:menu="@menu/menu"
+        tools:ignore="VisualLintBottomNav" />
 
 </RelativeLayout>

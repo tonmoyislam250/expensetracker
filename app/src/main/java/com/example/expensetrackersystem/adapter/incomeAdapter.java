@@ -14,13 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.expensetrackersystem.R;
 import com.example.expensetrackersystem.model.incomeModel;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 public class incomeAdapter extends RecyclerView.Adapter<incomeAdapter.viewholder> {
-    private Context context;
-    private List<incomeModel> incomeModelList = new ArrayList<>();
+    private final Context context;
+    private final List<incomeModel> incomeModelList;
 
     public incomeAdapter(Context context, List<incomeModel> incomeModelList) {
         this.context = context;

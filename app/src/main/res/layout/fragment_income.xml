@@ -11,9 +11,9 @@
         android:id="@+id/tv_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:text="ProjectGurukul"
+        android:text="@string/ExpenseTracker"
         android:textColor="@color/white"
         android:textSize="32sp" />
 
@@ -22,10 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_text"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
-        android:text="Income"
+        android:text="@string/income"
         android:textColor="@color/white"
         android:textSize="28sp" />
 
@@ -47,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bungee_inline"
-                android:text="Expense"
+                android:text="@string/income"
                 android:textColor="@color/light_green"
                 android:textSize="24sp" />
 
@@ -55,7 +55,7 @@
                 android:id="@+id/tv_income"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rs. 10000.00"
+                android:text="@string/bdt_10000_00"
                 android:textColor="@color/light_green"
                 android:textSize="24sp" />
 
@@ -67,9 +67,10 @@
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
             android:src="@drawable/ic_baseline_pie_chart_24"
-            app:tint="@color/purple_200" />
+            app:tint="@color/purple_200"
+            android:importantForAccessibility="no" />
 
     </RelativeLayout>
 

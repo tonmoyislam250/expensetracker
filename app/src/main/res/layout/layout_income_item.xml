@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -8,7 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:gravity="center">
+        android:gravity="center"
+        tools:ignore="UselessParent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_url"
@@ -29,7 +31,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Job"
+                    android:text="@string/job"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -39,7 +41,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Rs. 7000"
+                    android:text="@string/bdt_7000"
                     android:textColor="@color/black"
                     android:textSize="22sp"
                     android:textStyle="bold" />
@@ -49,7 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="June 28, 2019"
+                    android:text="@string/january_27_2023"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold" />

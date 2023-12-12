@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp">
+        android:padding="15dp"
+        tools:ignore="UselessParent">
 
         <TextView
             android:id="@+id/tv_incomeDate"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:text="Jun 28,2019"
+            android:text="@string/january_27_2023"
             android:textColor="@color/light_red"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -21,9 +23,9 @@
             android:id="@+id/tv_incomeType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="28dp"
-            android:layout_toRightOf="@id/tv_incomeDate"
-            android:text="Job"
+            android:layout_marginStart="28dp"
+            android:layout_toEndOf="@id/tv_incomeDate"
+            android:text="@string/job"
             android:textColor="@color/textColor"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -33,9 +35,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_incomeType"
-            android:layout_marginLeft="28dp"
-            android:layout_toRightOf="@id/tv_incomeDate"
-            android:text="Extra Income"
+            android:layout_marginStart="28dp"
+            android:layout_toEndOf="@id/tv_incomeDate"
+            android:text="@string/extra_income"
             android:textColor="@color/textColor"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -45,8 +47,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="24dp"
-            android:text="4800"
+            android:layout_marginEnd="24dp"
+            android:text="@string/_12444"
             android:textColor="@color/light_red"
             android:textSize="20sp"
             android:textStyle="bold" />
